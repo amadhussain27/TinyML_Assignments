@@ -1,21 +1,21 @@
-import sensor, image, pyb
+import sensor, image, pyb                                         # Import sensor
 
-RED_LED_PIN = 1
-BLUE_LED_PIN = 3
+RED_LED_PIN = 1                                                   # Red LED is pin 1
+BLUE_LED_PIN = 3                                                  # Blue LED is pin 3
 
-sensor.reset() # Initialize the camera sensor.
-sensor.set_pixformat(sensor.GRAYSCALE) # or sensor.GRAYSCALE
-sensor.set_framesize(sensor.QVGA) # or sensor.QQVGA (or others)
-sensor.skip_frames(time = 2000) # Let new settings take affect.
+sensor.reset()                                                    # Initialize the camera sensor.
+sensor.set_pixformat(sensor.GRAYSCALE)                            # Set Pixel of camera to GRAYSCALE
+sensor.set_framesize(sensor.QVGA)                                 # Set QVGA sensor
+sensor.skip_frames(time = 2000)                                   # Let new settings take affect.
 
-pyb.LED(RED_LED_PIN).on()
-sensor.skip_frames(time = 2000) # Give the user time to get ready.
+pyb.LED(RED_LED_PIN).on()                                         # Red LED on
+sensor.skip_frames(time = 2000)                                   # Give the user time to get ready.
 
-pyb.LED(RED_LED_PIN).off()
-pyb.LED(BLUE_LED_PIN).on()
+pyb.LED(RED_LED_PIN).off()                                        # Red LED off
+pyb.LED(BLUE_LED_PIN).on()                                        # Blue LED on to let user know that camera is ready to take picture
 
-print("You're on camera!")
-sensor.snapshot().save("example.jpg") # or "example.bmp" (or others)
+print("You're on camera!")                                        # Message to display before capture
+sensor.snapshot().save("example.jpg")                             # Save the image as jpg
 
-pyb.LED(BLUE_LED_PIN).off()
-print("Done! Reset the camera to see the saved image.")
+pyb.LED(BLUE_LED_PIN).off()                                       # Blue LED off
+print("Done! Reset the camera to see the saved image.")           # Show message to user the its done taking picture  
