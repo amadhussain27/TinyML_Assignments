@@ -7,3 +7,4 @@ Then Install the packages for arduino nano.
 After installing the package go the Files - Examples - Basics - Blink.                                                                             
 Compile and upload this example file to arduino.                                                                                                 
 Green light will start blinking on Arduino Microcontroller.                                                                                               
+It means packages are install correctly and ardunio board is working.                                                                        
