@@ -14,7 +14,7 @@ void loop()
  for (in = 0; in < 6.283; in = in + 0.001)      // Loop for Pi values (pi = 3.1412 and 2pi = 6.283)
 {
   
-  out = sin(in) * 127.5 + 127.5 ;             // Sin function for setting up the brightness
+  out = sin(in) * 127.5 + 127.5 ;               // Sin function for setting up the brightness
   analogWrite(LED,out);                         // Light the LED
   delay(0.0001);                                //  wait
 }
